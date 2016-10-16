@@ -1,0 +1,15 @@
+html {
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+.posts-title {
+  text-align: center;
+}
+
+.post-container {
+  border: 2px solid black;
+}
+
+.post-image {
+  max-width: 150px;
+}
