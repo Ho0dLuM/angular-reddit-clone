@@ -1,11 +1,11 @@
-
 (function () {
 
   angular.module(
     'freddit', [
     'ngRoute',
     'angularMoment',
-    'ngAnimate'
+    'ngAnimate',
+    'ui.materialize'
     ]);
 
 })();

@@ -1,3 +1,33 @@
-<div class="container" ng-controller="postPageCtrl">
-<h1>Hello World</h1>
+<!-- header/navigation start -->
+<div ng-controller="postPageCtrl">
+  <div class="navbar-fixed">
+    <nav class="cyan darken-2">
+      <div class="nav-wrapper">
+        <a href="#/" class="brand-logo right">FReddit</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li>
+            <a href="#/" class="waves-effect"><i class="material-icons left">note_add</i>New Post</a>
+          </li>
+          <li>
+            <a class="dropdown-button cyan darken-2 waves-effect" href="javascript:void(0);" data-activates="dropdown1" dropdown>Sort By</a>
+            <ul id="dropdown1" class="dropdown-content">
+              <li><a href="javascript:void(0);">Votes</a></li>
+              <li><a href="javascript:void(0);">Title</a></li>
+              <li><a href="javascript:void(0);">Date</a></li>
+            </ul>
+          </li>
+          <li>
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </div>
+<!-- header/navigation end -->
