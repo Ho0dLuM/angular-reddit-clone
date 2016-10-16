@@ -1,7 +1,7 @@
 (function() {
 
   angular.module('freddit')
-  .controller('postPageCtrl', [postPageCtrl]);
+  .controller('postPageCtrl', ['$scope', postPageCtrl]);
 
   function postPageCtrl($scope) {
     console.log('postpage.js');
