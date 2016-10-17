@@ -1,7 +1,8 @@
 (function() {
 
   angular.module('freddit')
-    .controller('postPageCtrl', ['$scope', 'createPost', postPageCtrl]);
+    .controller('postPageCtrl', ['$scope', 'createPost', postPageCtrl
+  ]);
 
   function postPageCtrl($scope, createPost) {
     $scope.posts = createPost.getPosts();
@@ -13,13 +14,13 @@
 
     $scope.thumbUp = (id, votes) => {
       const post = createPost.getSinglePost(id)[0];
-      createPost.currentVotes(post, votes+1);
+      createPost.currentVotes(post, votes + 1);
       createPost.updatePost(post);
     };
 
     $scope.thumbDown = (id, votes) => {
       const post = createPost.getSinglePost(id)[0];
-      createPost.currentVotes(post, votes-1);
+      createPost.currentVotes(post, votes - 1);
       createPost.updatePost(post);
     };
 
@@ -39,6 +40,6 @@
       $scope.newCommentObj = {};
     };
 
-}
+  }
 
 })();
