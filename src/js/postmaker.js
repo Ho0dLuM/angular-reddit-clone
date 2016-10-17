@@ -71,24 +71,25 @@
     };
 
     posts.newComment = (post, comment) => {
-      dummyPosts[post.id].comments.push(comment);
+      dummyPosts[post.id - 1].comments.push(comment);
     };
 
-    // posts.createPost = (newPost) => {
-    //   const getID = dummyPosts[dummyPosts.length - 1].id;
-    //   newPost.id = getID + 1;
-    //   newPost.date = moment(new Date()).calendar(null, {
-    //       sameDay: '[Today]',
-    //       nextDay: '[Tomorrow]',
-    //       nextWeek: 'dddd',
-    //       lastDay: '[Yesterday]',
-    //       lastWeek: '[Last] dddd',
-    //       sameElse: 'dddd, MMMM Do YYYY'
-    //     });
-    //   newPost.votes = 0;
-    //   newPost.comments = [];
-    //   dummyPosts.push(newPost);
-    // };
+    posts.addNewPost = (newPost) => {
+      const getID = dummyPosts[dummyPosts.length - 1].id;
+      newPost.id = getID + 1;
+      newPost.date = moment(new Date()).calendar(null, {
+          sameDay: '[Today]',
+          nextDay: '[Tomorrow]',
+          nextWeek: 'dddd',
+          lastDay: '[Yesterday]',
+          lastWeek: '[Last] dddd',
+          sameElse: 'dddd, MMMM Do YYYY'
+        });
+      newPost.votes = 0;
+      newPost.comments = [];
+      dummyPosts.push(newPost);
+    };
+
     return posts;
   }
 

@@ -6,7 +6,6 @@ var jscs = require('gulp-jscs');
 var connect = require('gulp-connect');
 var runSequence = require('run-sequence');
 
-
 // *** tasks *** ///
 
 gulp.task('connect', function () {
@@ -52,7 +51,7 @@ gulp.task('watch', function() {
   gulp.watch(['./src/css/*.css'], ['css']);
 });
 
-// *** defailt task *** //
+// *** default task *** //
 gulp.task('default', function() {
   runSequence(
     ['jshint'],
