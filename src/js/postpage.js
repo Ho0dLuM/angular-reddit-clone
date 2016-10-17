@@ -36,6 +36,7 @@
 
     $scope.createComment = (id, comment) => {
       const post = createPost.getSinglePost(id)[0];
+      console.log(post);
       createPost.newComment(post, comment);
       $scope.newCommentObj = {};
     };

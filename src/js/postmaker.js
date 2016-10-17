@@ -4,7 +4,7 @@
     .service('createPost', createPost);
 
   function createPost() {
-    var posts = {};
+    const posts = {};
     dummyPosts = [{
       id: 1,
       title: 'League of Legends Worlds 2016 Champs will be SKT!!',
