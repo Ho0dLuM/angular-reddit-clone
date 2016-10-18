@@ -10,9 +10,9 @@
         <li>
           <a class="dropdown-button cyan darken-2 waves-effect waves-yellow" href="javascript:void(0);" data-activates="dropdown1" dropdown>Sort By</a>
           <ul id="dropdown1" class="dropdown-content">
-            <li><a ng-click="dropdownFilter('ascending', 'title')" href="javascript:void(0);">Title</a></li>
-            <li><a ng-click="dropdownFilter('descending', 'votes')" href="javascript:void(0);">Votes</a></li>
-            <li><a ng-click="dropdownFilter('descending', 'date')" href="javascript:void(0);">Date</a></li>
+            <li><a ng-click="postPageCtrl.dropdownFilter('ascending', 'title')" href="javascript:void(0);">Title</a></li>
+            <li><a ng-click="postPageCtrl.dropdownFilter('descending', 'votes')" href="javascript:void(0);">Votes</a></li>
+            <li><a ng-click="postPageCtrl.dropdownFilter('descending', 'date')" href="javascript:void(0);">Date</a></li>
           </ul>
         </li>
         <li>
@@ -34,7 +34,7 @@
 <div class="col s12">
   <h3 class="posts-title">The Posts</h3><br><hr>
 </div>
-<div ng-repeat="post in posts | orderBy:filter | filter:search">
+<div ng-repeat="post in postPageCtrl.posts | orderBy:postPageCtrl.filter | filter:search">
   <div class="container z-depth-5 grey lighten-2">
     <div class="row">
       <div class="col s2">
@@ -43,8 +43,8 @@
       <div class="col s8">
         <h5>
           <span class="{{post.color}}-text">Likes: {{post.votes}}</span>
-          <span ng-click="thumbUp(post.id, post.votes)"><i class="material-icons left">thumb_up</i></span>
-          <span ng-click="thumbDown(post.id, post.votes)"><i class="material-icons left">thumb_down</i></span>
+          <span ng-click="postPageCtrl.thumbUp(post.id, post.votes)"><i class="material-icons left">thumb_up</i></span>
+          <span ng-click="postPageCtrl.thumbDown(post.id, post.votes)"><i class="material-icons left">thumb_down</i></span>
           <span>| {{post.title}}</span>
         </h5>
         <input type="hidden" value="{{post.id}}">
@@ -52,7 +52,7 @@
         <h4>{{post.author}}</h4>
         <p>{{post.description}}</p>
         <ul class="col s5 pull-s3 collapsible popout" data-collapsible="accordion" watch>
-          <li ng-repeat="single in collapsibleElements">
+          <li ng-repeat="single in postPageCtrl.collapsibleElements">
             <div class="collapsible-header waves-effect waves-yellow">
               <i class="material-icons">comment</i>{{post.comments.length}}
               <ng-pluralize count="post.comments.length" when="{
@@ -78,7 +78,7 @@
   <div id="add-comment-modal" class="modal">
     <div class="modal-content">
       <h4>New Comment</h4>
-        <form ng-submit="createComment(post.id, newCommentObj)">
+        <form ng-submit="postPageCtrl.createComment(post.id, newCommentObj)">
           <div class="input-field">
             <input ng-model="newCommentObj.author" id="comment_author" type="text" class="validate" minlength="3" maxlength="15" required>
             <label for="comment_author">Author</label><br>
