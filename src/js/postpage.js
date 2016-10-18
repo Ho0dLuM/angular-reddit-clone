@@ -1,44 +1,44 @@
 (function() {
 
   angular.module('freddit')
-    .controller('postPageCtrl', ['$scope', 'createPost', postPageCtrl
-  ]);
+    .controller('postPageCtrl', postPageCtrl);
 
-  function postPageCtrl($scope, createPost) {
-    $scope.posts = createPost.getPosts();
-    $scope.collapsibleElements = [{
+  postPageCtrl.$inject = ['createPost'];
+
+  function postPageCtrl(createPost) {
+    this.posts = createPost.getPosts();
+    this.collapsibleElements = [{
       title: ''
     }];
-    $scope.newComment = {};
-    $scope.filter = '-votes';
+    this.newComment = {};
+    this.filter = '-votes';
 
-    $scope.thumbUp = (id, votes) => {
+    this.thumbUp = (id, votes) => {
       const post = createPost.getSinglePost(id)[0];
       createPost.currentVotes(post, votes + 1);
       createPost.updatePost(post);
     };
 
-    $scope.thumbDown = (id, votes) => {
+    this.thumbDown = (id, votes) => {
       const post = createPost.getSinglePost(id)[0];
       createPost.currentVotes(post, votes - 1);
       createPost.updatePost(post);
     };
 
-    $scope.dropdownFilter = (order, filter) => {
+    this.dropdownFilter = (order, filter) => {
       let operator = '';
       if (order === 'descending') {
         operator = '-';
       } else {
         operator = '+';
       }
-      $scope.filter = operator + filter;
+      this.filter = operator + filter;
     };
 
-    $scope.createComment = (id, comment) => {
+    this.createComment = (id, comment) => {
       const post = createPost.getSinglePost(id)[0];
-      console.log(post);
       createPost.newComment(post, comment);
-      $scope.newCommentObj = {};
+      this.newCommentObj = {};
     };
 
   }
