@@ -8,12 +8,12 @@
       .when('/', {
         controller: 'postPageCtrl',
         controllerAs: 'postPageCtrl',
-        templateUrl: 'postpage.html'
+        templateUrl: './postpage/postpage.html'
       })
       .when('/new-post', {
         controller: 'newPostCtrl',
         controllerAs: 'newPostCtrl',
-        templateUrl: 'newpost.html'
+        templateUrl: './newpost/newpost.html'
       });
   }
 
