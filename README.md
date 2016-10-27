@@ -1,1 +1,1 @@
-# freddit
+# angular-reddit-clone
