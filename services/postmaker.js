@@ -1,6 +1,6 @@
 (function() {
 
-  angular.module('freddit')
+  angular.module('postR')
     .service('createPost', createPost);
 
   function createPost() {

@@ -1,6 +1,6 @@
 (function() {
 
-  angular.module('freddit')
+  angular.module('postR')
     .controller('postPageCtrl', postPageCtrl);
 
   postPageCtrl.$inject = ['createPost'];

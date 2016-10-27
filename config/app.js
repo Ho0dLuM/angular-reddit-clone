@@ -1,7 +1,7 @@
 (function () {
 
   angular.module(
-    'freddit', [
+    'postR', [
     'ngRoute',
     'angularMoment',
     'ngAnimate',

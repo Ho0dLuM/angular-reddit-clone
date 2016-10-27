@@ -1,6 +1,6 @@
 (function () {
 
-  angular.module('freddit')
+  angular.module('postR')
     .config(['$routeProvider', routes]);
 
   function routes($routeProvider) {
